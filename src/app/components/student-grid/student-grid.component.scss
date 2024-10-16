@@ -1,0 +1,17 @@
+.data-area {
+  display: grid;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+
+  /* In case of long tables */
+  table {
+    width: 100%;
+  }
+
+  mat-paginator {
+    display: flex;
+    justify-self: start;
+    margin-top: 20px;
+  }
+}
