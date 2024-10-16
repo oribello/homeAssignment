@@ -2,10 +2,10 @@
     <div style="width: 50%; padding: 0 20px;">
         <mat-form-field>
             <mat-label>Filter</mat-label>
-            <input matInput #input (input)="onFilterChange($event)" placeholder="'ID:# or >#'">
+            <input type="text" matInput #input (input)="onFilterChange($event)" placeholder="'ID:# or >#'">
         </mat-form-field>
-        <button (click)="addStudent()">Add</button>
-        <button (click)="removeStudent()">Remove</button><app-student-grid></app-student-grid>
+        <button mat-button (click)="addStudent()">Add</button>
+        <button mat-button (click)="removeStudent()">Remove</button><app-student-grid></app-student-grid>
     </div>
     <div>
         <app-student-details></app-student-details>

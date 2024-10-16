@@ -7,6 +7,8 @@ import { Student } from 'src/app/enums/student.enum';
 import { StudentService } from 'src/app/services/student.service';
 import { BehaviorSubject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { MonitorComponent } from '../monitor/monitor.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-main',
@@ -17,7 +19,8 @@ import { MonitorComponent } from '../monitor/monitor.component';
     MonitorComponent,
     MatInputModule,
     MatFormFieldModule,
-    
+    MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
