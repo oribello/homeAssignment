@@ -10,14 +10,15 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     text-decoration: underline;
 }
 
-nav {
-    .mdc-button__label {
-        text-decoration: none;
-        color: sandybrown !important;
-        padding: 5px 10px;
-    }
+.mdc-button__label {
+    text-decoration: none;
+    color: sandybrown !important;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
