@@ -33,17 +33,9 @@ export class MainComponent {
     debounceTime(1000),
     distinctUntilChanged()
   );
-  // filterText$ = this.filterSubject.asObservable();
 
   ngOnInit() {
-    // this.studentService.students$.subscribe(students => {
-      // this.dataSource.data = students
-    // });
-    // this.dataSource.data = students;
 
-    // this.subscription = this.studentService.selectedId$.subscribe(stu => {//console.log('***ID11 :',id);
-    //   this.selected_student = stu;
-    // });
   }
 
   onFilterChange(event: Event): void {

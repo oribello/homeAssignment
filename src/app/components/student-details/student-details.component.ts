@@ -21,19 +21,11 @@ export class StudentDetailsComponent {
 
   ngOnInit(): void {
     this.subscription = this.studentService.selectedStudent$.subscribe(stu => {
-      const selected_student: Student | null = stu;
-// debugger
-      // this.selected_student = id;
-      // if (this.selected_student) {
-        
+      const selected_student: Student | null = stu;  
         if (selected_student){
           const stuId = this.findStudentIndex1(selected_student);
           this.student = this.stu_list[stuId];
         }
-        
-      // } else {
-      //   this.student = null;
-      // }
     });
   }
 

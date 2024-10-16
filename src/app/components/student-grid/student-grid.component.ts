@@ -87,16 +87,6 @@ export class StudentGridComponent {
 
     // Filter the data
     if (filterText.includes('ID:')) {
-      // let newStr = filterText.split('ID:');
-      // if (newStr[1].length) {
-      //   const filteredData = this.dataSource.data.filter((item: { id: { toString: () => string; }; }) =>
-      //     item.id.toString().startsWith(newStr[1])
-      //   );
-
-      //   this.dataSource.data = filteredData;
-      //   // Return an Observable of the filtered data
-      //   return of(filteredData);
-      // }
       let newStr = filterText.replace('ID:', '');
       if (newStr.length) {
         const filteredData = this.dataSource.data.filter((item: { id: { toString: () => string; }; }) =>
@@ -125,26 +115,6 @@ export class StudentGridComponent {
     }
 
     return of(this.dataSource.data);
-
-
-
-
-    // this.dataSource.filterPredicate = (data: any, filter: string) => {
-    //   return data.name.toLowerCase().includes(filter) || data.subject.toLowerCase().includes(filter);
-    // };
-    // this.dataSource.data.filter((stu: { id: { toString: () => string; }; })=> stu.id.toString() == str);
-    // const filterValue = (event.target as HTMLInputElement).value;
-
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    // if (this.dataSource.paginator) {
-    //   this.dataSource.paginator.firstPage();
-    // }
   }
 
-  // highlight(row: any): boolean {console.log('Row ID:', row.id, 'Selected ID:', this.studentService.selectedId$, 'Match:', row.id === this.selected_student_id);
-  //   return row.id === this.selected_student_id;
-  //   // 
-  //   // return row.id === this.selected_student_id;
-  // }
 }

@@ -42,9 +42,7 @@ export class MonitorComponent {
   @ViewChild('CBfailed') private cbFailed!: MatCheckbox;
   constructor(
     private studentService: StudentService,
-  ) {
-    // this.dataSource = new MatTableDataSource<{[key: string]: Record }>([]);
-  }
+  ) {}
 
   ngOnInit() {
     this.subscriptions.push(
@@ -54,19 +52,6 @@ export class MonitorComponent {
     );
 
     this.records = this.calculateRecords(this.students_list);
-
-    // this.subscriptions.push(
-    //   this.studentService.selectedStudent$.subscribe(student => {
-    //     this.selected_student = student;
-
-    //   })
-    // );
-
-    // this.subscriptions.push(
-    //   this.mainComponent.filterText$.subscribe(filterText => {
-    //     this.applyFilter(filterText);
-    //   })
-    // );
   }
 
   ngAfterViewInit(): void {
@@ -77,8 +62,6 @@ export class MonitorComponent {
       exams: student.exams
     }));
     this.recordsDataArray = recordsDataArray;
-    // debugger
-    // <Record[]>this.recordsDataArray = structuredClone(recordsDataArray) ;
     this.dataSource = new MatTableDataSource(recordsDataArray);
     this.dataSource.data = recordsDataArray
   }
@@ -103,12 +86,6 @@ export class MonitorComponent {
     // Calculate averages and remove totalGrade
     Object.values(groupedData).forEach(student => {
       student.average = Number((student.totalGrade / student.exams).toFixed(2));
-      // const updatedStudent: Omit<typeof student, 'totalGrade'> = {
-      //   ...student,
-      //   average: student.average
-      // };
-      // // Assign the updated student back to the original reference
-      // student = Object.assign(student, updatedStudent);
     });
 
     return groupedData;
@@ -133,28 +110,6 @@ export class MonitorComponent {
         this.dataSource.data = this.recordsDataArray;
     }
 
-    // if (this.cbSuccess.checked && this.cbFailed.checked) {
-    //   this.dataSource.data = this.recordsDataArray;
-    // } else {
-    //   if (this.cbSuccess.checked) {
-    //     this.dataSource.data = Object.values(originalData).filter((record: { average: number; }) => record.average >= 65 ? true : false);
-    //   } else {
-    //     this.dataSource.data = Object.values(originalData).filter((record: { average: number; }) => record.average < 65 ? true : false);
-    //   }
-    // } 
-
-
-    /*
-    if (e.checked) {
-      // let temp: typeof this.records = structuredClone(this.records);
-      // const temp: typeof this.records = JSON.parse(JSON.stringify(this.records));
-      
-      this.dataSource.data = Object.values(originalData).filter((record: { average: number; }) => record.average > 65 ? true : false);
-    } else {
-      debugger
-      this.dataSource.data = this.recordsDataArray;
-    }
-    */
   }
 
   onFilterChange(event: Event) {
